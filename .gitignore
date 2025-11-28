@@ -1,0 +1,16 @@
+# Ignore local Python virtual environments
+01-todo/.venv/
+.venv/
+venv/
+env/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+# SQLite database files
+01-todo/db.sqlite3
+db.sqlite3
+# Editor/IDE
+.vscode/
+.idea/
+# macOS
+.DS_Store
