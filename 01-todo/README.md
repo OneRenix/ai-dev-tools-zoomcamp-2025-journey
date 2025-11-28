@@ -34,7 +34,7 @@ Follow these steps to get the TODO application up and running locally.
     ```
 
 2.  **Create a virtual environment and install dependencies**:
-    A virtual environment (`.venv`) is already included in this workspace. If for some reason it's not present or you wish to recreate it, you can do so:
+    It's recommended to create and activate a virtual environment to isolate project dependencies. If you don't have one or wish to recreate it, you can do so:
     ```bash
     python -m venv .venv
     source .venv/bin/activate
@@ -44,19 +44,19 @@ Follow these steps to get the TODO application up and running locally.
 3.  **Apply database migrations**:
     This sets up the necessary database tables for your models.
     ```bash
-    ./.venv/bin/python manage.py migrate
+    python manage.py migrate
     ```
 
 4.  **Create a superuser (optional but recommended)**:
     This allows you to access the Django admin interface to manage your TODOs, tags, subtasks, and comments.
     ```bash
-    ./.venv/bin/python manage.py createsuperuser
+    python manage.py createsuperuser
     ```
     Follow the prompts to create your admin account.
 
 5.  **Run the development server**:
     ```bash
-    ./.venv/bin/python manage.py runserver 0.0.0.0:8000
+    python manage.py runserver 0.0.0.0:8000
     ```
 
 6.  **Access the application**:
@@ -69,7 +69,6 @@ The project follows a standard Django structure:
 
 ```
 01-todo/
-├── .venv/                      # Python Virtual Environment
 ├── db.sqlite3                  # SQLite database file
 ├── manage.py                   # Django's command-line utility
 ├── README.md                   # This documentation file
