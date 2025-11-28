@@ -1,0 +1,348 @@
+/* Custom styles for the TODO app (Bolt.new-inspired dark theme) */
+
+:root {
+    --primary-color: #bb86fc; /* Light purple for accents */
+    --primary-light: #e0b4ff;
+    --primary-dark: #8c58cc;
+
+    --accent-color: #03dac6; /* Teal for highlights */
+    --accent-light: #66ffda;
+    --accent-dark: #00a896;
+
+    --background-dark: #121212; /* Dark background */
+    --surface-dark: #1e1e1e;   /* Slightly lighter surface for cards/forms */
+
+    --text-primary: #ffffff;   /* Pure white text on dark background */
+    --text-secondary: #cccccc; /* Lighter muted text */
+    --text-inverted: #000000;  /* Dark text on light backgrounds */
+
+    --border-color: #333333;   /* Subtle border for separation */
+    --shadow-color: rgba(0, 0, 0, 0.4); /* Darker shadows */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, var(--background-dark) 0%, #000000 100%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700; /* Bolder headings */
+}
+
+.navbar {
+    background-color: var(--surface-dark) !important;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+    font-size: 1.6rem;
+    text-shadow: 0 0 5px var(--accent-color);
+}
+
+.container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    flex-grow: 1;
+}
+
+.table {
+    background-color: var(--surface-dark);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem var(--shadow-color);
+}
+
+.table th {
+    background-color: var(--primary-dark);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+    border-color: var(--border-color);
+}
+
+.btn {
+    padding: 0.7rem 1.4rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.9em;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-inverted);
+    box-shadow: 0 4px 6px rgba(var(--primary-color-rgb), 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-light);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 10px rgba(var(--primary-color-rgb), 0.4);
+}
+
+.btn-secondary {
+    background-color: var(--text-secondary);
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background-color: #8c8c8c;
+    border-color: #8c8c8c;
+    transform: translateY(-2px) scale(1.02);
+}
+
+.btn-danger {
+    background-color: #ff5252;
+    border-color: #ff5252;
+    color: var(--text-inverted);
+}
+
+.btn-danger:hover {
+    background-color: #e04040;
+    border-color: #e04040;
+    transform: translateY(-2px) scale(1.02);
+}
+
+.btn-info {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--text-inverted);
+    box-shadow: 0 4px 6px rgba(var(--accent-color-rgb), 0.3);
+}
+
+.btn-info:hover {
+    background-color: var(--accent-light);
+    border-color: var(--accent-light);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 10px rgba(var(--accent-color-rgb), 0.4);
+}
+
+.btn-outline-secondary {
+    color: var(--text-secondary);
+    border-color: var(--text-secondary);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--text-secondary);
+    color: var(--text-primary);
+    transform: translateY(-2px) scale(1.02);
+}
+
+.form-control,
+.form-select {
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--surface-dark);
+    color: var(--text-primary);
+    padding: 0.8rem 1.2rem;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-control::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 0.25rem rgba(var(--primary-color-rgb), 0.4);
+    background-color: var(--surface-dark);
+    color: var(--text-primary);
+    outline: 0;
+}
+
+.form-check-input {
+    background-color: var(--surface-dark);
+    border-color: var(--border-color);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-check-input:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 0.25rem rgba(var(--primary-color-rgb), 0.4);
+    outline: 0;
+}
+
+.form-check-label {
+    margin-left: 0.6rem;
+    color: var(--text-secondary);
+    font-size: 1.05em;
+}
+
+.badge {
+    font-weight: 600;
+    padding: 0.5em 0.9em;
+    border-radius: 0.375rem;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    letter-spacing: 0.03em;
+}
+
+/* Custom badge colors for dark theme */
+.badge.text-bg-low {
+    background-color: #616161 !important; /* Grey 700 */
+    color: var(--text-primary) !important;
+}
+.badge.text-bg-medium {
+    background-color: #ffb300 !important; /* Amber 600 */
+    color: var(--text-inverted) !important;
+}
+.badge.text-bg-high {
+    background-color: #f44336 !important; /* Red 500 */
+    color: var(--text-primary) !important;
+}
+.badge.text-bg-success {
+    background-color: #4CAF50 !important; /* Green 500 */
+    color: var(--text-primary) !important;
+}
+.badge.text-bg-warning {
+    background-color: #ffeb3b !important; /* Yellow 500 */
+    color: var(--text-inverted) !important;
+}
+
+.card {
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    background-color: var(--surface-dark);
+    box-shadow: 0 1rem 2rem var(--shadow-color);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 1.5rem 3rem var(--shadow-color);
+}
+
+.card-header {
+    background-color: var(--surface-dark);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 1.5rem 1.75rem;
+}
+
+.card-body {
+    padding: 1.75rem;
+}
+
+.card-title,
+.card-text {
+    color: var(--text-primary);
+}
+
+.card-text.text-muted,
+.card-body small.text-muted {
+    color: var(--text-secondary) !important;
+}
+
+.d-flex.justify-content-between.align-items-center {
+    margin-bottom: 2.5rem;
+}
+
+.alert {
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.75rem;
+    background-color: var(--surface-dark);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.alert-link {
+    color: var(--primary-light);
+}
+
+/* Ensure proper form rendering for select multiple */
+select[multiple].form-control {
+    height: auto;
+    min-height: 120px; /* Adjust as needed */
+}
+
+/* Form field errors */
+.errorlist {
+    color: #ff5252;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0.4rem;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    display: block;
+    color: var(--text-primary);
+}
+
+/* Adjust Bootstrap's default form-control focus ring for dark theme */
+.form-control:focus,
+.form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(var(--primary-color-rgb), 0.4) !important;
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(var(--primary-color-rgb), 0.4) !important;
+}
+
+.badge.bg-{{ todo.priority }} {
+    background-color: var(--{{ todo.priority }}-color) !important; /* Dynamic color based on priority */
+}
+
+/* Utility for dynamic color based on CSS variable approach for badges */
+.text-bg-low {
+    background-color: #616161 !important; /* Grey 700 */
+    color: #e0e0e0 !important;
+}
+.text-bg-medium {
+    background-color: #ffb300 !important; /* Amber 600 */
+    color: #121212 !important;
+}
+.text-bg-high {
+    background-color: #f44336 !important; /* Red 500 */
+    color: #e0e0e0 !important;
+}
+.text-bg-success {
+    background-color: #4CAF50 !important; /* Green 500 */
+    color: #e0e0e0 !important;
+}
+.text-bg-warning {
+    background-color: #ffeb3b !important; /* Yellow 500 */
+    color: #121212 !important;
+}
+.text-bg-secondary {
+    background-color: #757575 !important;
+    color: #e0e0e0 !important;
+}
